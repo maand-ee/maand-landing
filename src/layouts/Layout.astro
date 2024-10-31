@@ -1,4 +1,5 @@
 ---
+import '@fontsource-variable/maven-pro';
 interface Props {
 	title: string;
 }
@@ -16,35 +17,28 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="text-black">
+		<nav class="flex justify-between container py-5">
+			<div><h1 class="font-bold text-3xl">maand<span class="-ml-1">|</span></h1></div>
+			<ul class="flex space-x-4 font-semibold items-center">
+				<li><a href="#services">Teenused</a></li>
+				<li><a href="#about">Meist</a></li>
+				<li><a href="#contact">Kontakt</a></li>
+			</ul>
+		</nav>
 		<slot />
 	</body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+
+<style>
+:global(html) {
+	font-family: 'Maven Pro Variable', sans-serif;
+	color: hsl(var(--colour-text-hue) var(--colour-text-saturation) var(--colour-text-luminance));
+	scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+		:global(html) {
+		scroll-behavior: auto;
 	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+}
 </style>

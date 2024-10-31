@@ -1,0 +1,95 @@
+---
+import { Image } from 'astro:assets';
+import haridusMin from '../assets/haridus_ja_teadusministeerium.png';
+import RMIT from '../assets/RMIT.svg';
+import telia from '../assets/telia.svg';
+import rmk from '../assets/rmk.png';
+import maksu_ja_tolliamet from '../assets/maksu_ja_tolliamet.svg';
+import bigbank from '../assets/bigbank.svg';
+import TEHIK from '../assets/TEHIK.svg';
+import TTI from '../assets/TTI.svg';
+---
+<section
+  id="about"
+  class="container mt-36 flex flex-col sm:flex-row justify-between gap-8"
+>
+  <div class="flex-1">
+    <h3 class="mb-8 font-bold text-3xl">Mida oleme saavutanud</h3>
+    <div class="space-y-4 mb-12">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt
+          nesciunt rerum quos distinctio consequuntur quibusdam adipisci ratione
+          repellendus! Sed odit molestiae earum obcaecati excepturi.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem dolores vero illum accusantium. Beatae reprehenderit officiis nulla. Quisquam est ea fugit porro nam iste. Cumque, temporibus repellat! Eius aperiam ab sapiente possimus, aliquam minus.
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ad dolorem eum, eaque reprehenderit asperiores similique atque consequuntur iure quo earum exercitationem.
+        </p>
+    </div>
+    <div class="grid grid-cols-4 gap-8 mt-8 items-center justify-items-center">
+        <Image
+            class="w-auto h-auto"
+            src={haridusMin}
+            alt="Haridus- ja Teadusministeerium"
+        />
+        <Image
+            src={RMIT}
+            alt="RMIT"
+        />
+        <Image
+            src={telia}
+            alt="Telia"
+        />
+        <Image
+            src={rmk}
+            alt="RMK"
+        />
+        <Image
+            src={maksu_ja_tolliamet}
+            alt="Maksu- ja Tolliamet"
+        />
+        <Image
+            src={bigbank}
+            alt="Bigbank"
+        />
+        <Image
+            src={TEHIK}
+            alt="TEHIK"
+        />
+        <Image
+            src={TTI}
+            alt="TTI"
+        />
+    </div>
+  </div>
+  <div
+    class="flex-1 grid grid-flow-col auto-cols-auto grid-rows-2 justify-stretch gap-4"
+  >
+    <li
+      class="border border-black p-4 list-none rounded-2xl min-h-40 aspect-square"
+    >
+      <h2 class="text-3xl font-semibold">12</h2>
+      <p>lorem ipsum</p>
+    </li>
+    <li
+      class="bg-black text-white p-4 list-none rounded-2xl min-h-40 aspect-square"
+    >
+      <h2 class="text-3xl font-semibold">12</h2>
+      <p>lorem ipsum</p>
+    </li>
+    <li
+      class="bg-sand p-4 list-none rounded-2xl min-h-40 aspect-square"
+    >
+      <h2 class="text-3xl font-semibold">12</h2>
+      <p>lorem ipsum</p>
+    </li>
+    <li
+      class="bg-primary p-4 list-none rounded-2xl min-h-40 aspect-square"
+    >
+      <h2 class="text-3xl font-semibold">12</h2>
+      <p>lorem ipsum</p>
+    </li>
+  </div>
+</section>
