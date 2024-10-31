@@ -6,5 +6,5 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   integrations: [tailwind()],
   site: 'https://maand-ee.github.io',
-  base: '/maand-landing'
+  base: process.env.NODE_ENV === 'development' ? '/' : '/maand-landing'
 });
