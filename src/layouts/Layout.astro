@@ -20,15 +20,17 @@ const { title, lang } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class="text-black">
-		<nav class="flex justify-between container py-5">
-			<div><h1 class="font-bold text-3xl">maand<span class="-ml-1">|</span></h1></div>
-			<ul class="flex space-x-4 font-semibold items-center">
-				<li><a href="#services">{lang === 'et' ? 'Teenused' : 'Services'}</a></li>
-				<li><a href="#about">{lang === 'et' ? 'Meist' : 'About us'}</a></li>
-				<li><a href="#contact">{lang === 'et' ? 'Kontakt' : 'Contact'}</a></li>
-				<li><LanguageSwitcher lang={lang} /></li>
-			</ul>
-		</nav>
+		<header class="sticky top-0 bg-primary z-50 shadow-sm">
+			<nav class="flex justify-between container py-5">
+				<div><h1 class="font-bold text-3xl">maand<span class="-ml-1">|</span></h1></div>
+				<ul class="flex space-x-4 font-semibold items-center">
+					<li><a href="#services">{lang === 'et' ? 'Teenused' : 'Services'}</a></li>
+					<li><a href="#about">{lang === 'et' ? 'Meist' : 'About us'}</a></li>
+					<li><a href="#contact">{lang === 'et' ? 'Kontakt' : 'Contact'}</a></li>
+					<li><LanguageSwitcher lang={lang} /></li>
+				</ul>
+			</nav>
+		</header>
 		<slot />
 	</body>
 </html>
