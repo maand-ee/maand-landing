@@ -22,16 +22,16 @@ const { lang } = Astro.props;
             </iframe>
         </div>
         <div class="flex-1 bg-black rounded-b-2xl sm:rounded-r-2xl text-white p-5 py-10 sm:p-12 flex flex-col justify-center gap-6">
-            <h3 class="text-3xl font-bold">Võta meiega ühendust!</h3>
+            <h3 class="text-3xl font-bold">{lang === 'et' ? 'Võta meiega ühendust' : 'Get in touch with us'}</h3>
             <a href="mailto:info@maand.ee" class="text-2xl font-semibold underline underline-offset-4">info@maand.ee</a>
             <address class="not-italic flex flex-col gap-1 text-gray-300">
                 <a href="tel:+37256819552" class="text-white text-lg">(+372) 56819552</a>
-                <p>Turu tn 2, 51004 Tartu</p>
+                <p>{lang === 'et' ? 'Turu tn 2, 51004 Tartu' : 'Turu St 2, 51004 Tartu'}</p>
             </address>
             <div class="border-t border-gray-700 pt-6 text-gray-400 text-sm flex flex-col gap-1">
                 <p>MAAND SOLUTIONS OÜ</p>
-                <p>Registrikood: 16391221</p>
-                <p>KMKR: EE102445262</p>
+                <p>{lang === 'et' ? 'Registrikood: 16391221' : 'Registry code: 16391221'}</p>
+                <p>{lang === 'et' ? 'KMKR: EE102445262' : 'VAT: EE102445262'}</p>
             </div>
         </div>
     </div>
