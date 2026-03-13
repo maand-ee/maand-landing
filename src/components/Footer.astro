@@ -1,3 +1,11 @@
+---
+interface Props {
+    lang: 'et' | 'en';
+}
+
+const { lang } = Astro.props;
+---
+
 <footer id="contact" class=" mt-28 mb-4 container">
     <div class="bg-primary rounded-3xl flex flex-col sm:flex-row">
         <div class="flex-1 p-5 sm:p-12 ">
@@ -14,30 +22,30 @@
             </iframe>
             <address class="flex not-italic my-6 sm:my-0">
                 <div class="flex-1 flex flex-col">
-                    <p>Turu tn 2, 51004 Tartu</p>
+                    <p>{lang === 'et' ? 'Turu tn 2, 51004 Tartu' : 'Turu St 2, 51004 Tartu'}</p>
                     <a href="tel:+37256819552">(+372) 56819552</a>
                     <a href="mailto:info@maand.ee">info@maand.ee</a>
                 </div>
                 <div class="flex-1">
                     <p>MAAND SOLUTIONS OÜ</p>
-                    <p>Registrikood: 16391221</p>
-                    <p>KMKR: EE102445262</p>
+                    <p>{lang === 'et' ? 'Registrikood: 16391221' : 'Registry code: 16391221'}</p>
+                    <p>{lang === 'et' ? 'KMKR: EE102445262' : 'VAT registration number: EE102445262'}</p>
                 </div>
             </address>
         </div>
         <div class="flex-1 bg-black rounded-b-2xl sm:rounded-r-2xl text-white p-5 py-10 sm:p-12">
-            <h3 class="text-3xl font-bold mb-6">Võta meiega ühendust!</h3>
+            <h3 class="text-3xl font-bold mb-6">{lang === 'et' ? 'Võta meiega ühendust!' : 'Get in touch with us!'}</h3>
             <form action="">
                 <div class="flex flex-col gap-4 mt-4">
-                    <label for="name">Nimi:</label>
-                    <input name="name" type="text" placeholder="Nimi" class="p-2 rounded-lg">
+                    <label for="name">{lang === 'et' ? 'Nimi:' : 'Name:'}</label>
+                    <input name="name" type="text" placeholder={lang === 'et' ? 'Nimi' : 'Name'} class="p-2 rounded-lg">
 
-                    <label for="email">E-mail:</label>
-                    <input name="email" type="email" placeholder="E-mail" class="p-2 rounded-lg">
+                    <label for="email">{lang === 'et' ? 'E-mail:' : 'Email:'}</label>
+                    <input name="email" type="email" placeholder={lang === 'et' ? 'E-mail' : 'Email'} class="p-2 rounded-lg">
 
-                    <label for="message">Sõnum:</label>
-                    <textarea name="message" id="" cols="20" rows="10" placeholder="Sõnum" class="p-2 rounded-lg"></textarea>
-                    <div><button class="bg-primary text-black p-2 rounded-lg px-6">Saada</button></div>
+                    <label for="message">{lang === 'et' ? 'Sõnum:' : 'Message:'}</label>
+                    <textarea name="message" id="" cols="20" rows="10" placeholder={lang === 'et' ? 'Sõnum' : 'Message'} class="p-2 rounded-lg"></textarea>
+                    <div><button class="bg-primary text-black p-2 rounded-lg px-6">{lang === 'et' ? 'Saada' : 'Send'}</button></div>
                 </div>
             </form>
         </div>

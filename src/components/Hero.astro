@@ -7,19 +7,24 @@ import react from '../assets/react.svg';
 import nextjs from '../assets/nextjs.svg';
 import vue from '../assets/vue.svg';
 import angular from '../assets/angular.svg';
+interface Props {
+    lang: 'et' | 'en';
+}
+
+const { lang} = Astro.props;
 ---
 <section class="flex flex-wrap bg-sand mx-2 sm:mx-8 md:mx-12 rounded-3xl py-8 lg:min-h-[80vh]">
     <div class="grid grid-cols-1 lg:grid-cols-2 justify-between container items-center">
         <div class="order-last lg:order-first flex flex-col justify-center">
-            <h2 class="text-4xl mt-4 lg:mt-0 sm:text-5xl font-bold mb-4">Õigesti tehtud tarkvara</h2>
-            <p class="mb-8">Loome teile parima lahenduse</p>
-            <div><a class="bg-black text-white p-3 px-6 rounded-lg" href="#contact">Võta ühendust</a></div>
+            <h2 class="text-4xl mt-4 lg:mt-0 sm:text-5xl font-bold mb-4">{lang === 'et' ? 'Õigesti tehtud tarkvara' : 'Software done right'}</h2>
+            <p class="mb-8">{lang === 'et' ? 'Loome teile parima lahenduse' : 'We build the best solution for you'}</p>
+            <div><a class="bg-black text-white p-3 px-6 rounded-lg" href="#contact">{lang === 'et' ? 'Võta ühendust' : 'Get in touch'}</a></div>
         </div>
         <Image src={hero} alt="hero" class="rounded-3xl aspect-square" />
     </div>
 </section>
 <section class="container flex flex-col sm:flex-row sm:space-x-12 items-center my-8 flex-wrap">
-    <p>Me räägime sinu keelt:</p>
+    <p>{lang === 'et' ? 'Me räägime sinu keelt:' : 'We speak your language:'}</p>
     <div class="flex justify-between flex-1 gap-4 lg:gap-0 items-center sm:px-16">
         <Image src={java} alt="Java" class="h-8 sm:h-16 w-auto -mr-2" />
         <Image src={typescript} alt="Typescript" class="h-8 sm:h-10 w-auto" />
