@@ -1,0 +1,14 @@
+---
+interface Props {
+    lang: 'en' | 'et';
+}
+
+const { lang } = Astro.props;
+
+const switchUrl = lang === 'et' ? '/en/' : '/';
+const label = lang === 'et' ? 'English' : 'Eesti';
+---
+
+<a href={switchUrl} class="px-3 py-1 border rounded">
+    {label}
+</a>

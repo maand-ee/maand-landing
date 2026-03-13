@@ -8,13 +8,19 @@ import maksu_ja_tolliamet from '../assets/maksu_ja_tolliamet.svg';
 import bigbank from '../assets/bigbank.svg';
 import TEHIK from '../assets/TEHIK.svg';
 import TWM from '../assets/TWM.png';
+interface Props {
+    lang: 'et' | 'en';
+}
+
+const { lang } = Astro.props;
 ---
+
 <section
   id="about"
   class="container mt-36 flex flex-col sm:flex-row justify-between gap-8"
 >
   <div class="flex-1">
-    <h3 class="mb-8 font-bold text-3xl">Mida oleme saavutanud</h3>
+    <h3 class="mb-8 font-bold text-3xl">{lang === 'et' ? 'Mida oleme saavutanud' : 'What we have achieved'}</h3>
     <div class="space-y-4 mb-12">
         <p>
             Beutler Ink helps brands both emerging and established tell their stories online through accurate, engaging Wikipedia content and AI-native digital campaigns that make an impact.
@@ -67,25 +73,25 @@ import TWM from '../assets/TWM.png';
       class="border border-black p-4 list-none rounded-2xl min-h-40 aspect-square"
     >
       <h2 class="text-3xl font-semibold">37</h2>
-      <p>Edukat projekti</p>
+      <p>{lang === 'et' ? 'Edukat projekti' : 'Completed projects'}</p>
     </li>
     <li
       class="bg-black text-white p-4 list-none rounded-2xl min-h-40 aspect-square"
     >
       <h2 class="text-3xl font-semibold">5</h2>
-      <p>Töötajat</p>
+      <p>{lang === 'et' ? 'Töötajat' : 'Employees'}</p>
     </li>
     <li
       class="bg-sand p-4 list-none rounded-2xl min-h-40 aspect-square"
     >
       <h2 class="text-3xl font-semibold">3 000 000</h2>
-      <p>Revenue</p>
+      <p>{lang === 'et' ? 'Käive' : 'Revenue'}</p>
     </li>
     <li
       class="bg-primary p-4 list-none rounded-2xl min-h-40 aspect-square"
     >
       <h2 class="text-3xl font-semibold">37</h2>
-      <p>Rahulolevat klienti</p>
+      <p>{lang === 'et' ? 'Rahulolevat klienti' : 'Satisfied clients'}</p>
     </li>
   </div>
 </section>
