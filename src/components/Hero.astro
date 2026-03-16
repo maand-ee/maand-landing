@@ -13,11 +13,11 @@ interface Props {
 
 const { lang} = Astro.props;
 ---
-<section class="flex flex-wrap bg-sand mx-2 sm:mx-8 md:mx-12 rounded-3xl py-8 lg:min-h-[80vh]">
+<section class="mt-8 flex flex-wrap bg-sand mx-2 sm:mx-8 md:mx-12 rounded-3xl py-8 lg:min-h-[80vh]">
     <div class="grid grid-cols-1 lg:grid-cols-2 justify-between container items-center">
         <div class="order-last lg:order-first flex flex-col justify-center">
             <h2 class="text-4xl mt-4 lg:mt-0 sm:text-5xl font-bold mb-4">{lang === 'et' ? 'Õigesti tehtud tarkvara' : 'Software done right'}</h2>
-            <p class="mb-8">{lang === 'et' ? 'Loome teile parima lahenduse' : 'We will build the best solution for you'}</p>
+            <p class="mb-8">{lang === 'et' ? 'Loome teile parima lahenduse' : 'We build the best solution for you'}</p>
             <div><a class="bg-black text-white p-3 px-6 rounded-lg" href="#contact">{lang === 'et' ? 'Võta ühendust' : 'Get in touch'}</a></div>
         </div>
         <Image src={hero} alt="hero" class="rounded-3xl aspect-square" />
