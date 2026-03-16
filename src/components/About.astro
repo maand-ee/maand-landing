@@ -23,12 +23,15 @@ const { lang } = Astro.props;
     <h3 class="mb-8 font-bold text-3xl">{lang === 'et' ? 'Mida oleme saavutanud' : 'What we have achieved'}</h3>
     <div class="space-y-4 mb-12">
         <p>
-            Beutler Ink helps brands both emerging and established tell their stories online through accurate, engaging Wikipedia content and AI-native digital campaigns that make an impact.
+            {lang === 'et' ? 'Beutler Ink aitab nii alustavatel kui ka juba tegutsevatel brändidel oma lugusid veebis jutustada täpse ja kaasahaarava Vikipeedia sisu ning tehisintellektil põhinevate digikampaaniate kaudu, mis avaldavad mõju.' :
+                'Beutler Ink helps brands both emerging and established tell their stories online through accurate, engaging Wikipedia content and AI-native digital campaigns that make an impact.'}
         </p>
         <p>
-            Beutler Ink was founded with the purpose of solving problems on Wikipedia for companies, organizations, and individuals. We specialize in creating and updating pages while staying on the right side of community guidelines, aligning your messaging with Wikipedia's mission.        </p>
+            {lang === 'et' ? 'Beutler Ink asutati eesmärgiga lahendada ettevõtete, organisatsioonide ja üksikisikute Vikipeediaga seotud probleeme. Meie erialaks on lehekülgede loomine ja ajakohastamine, järgides samal ajal kogukonna reegleid ja viies teie sõnumid vastavusse Vikipeedia missiooniga.' :
+                'Beutler Ink was founded with the purpose of solving problems on Wikipedia for companies, organizations, and individuals. We specialize in creating and updating pages while staying on the right side of community guidelines, aligning your messaging with Wikipedia\'s mission.'}</p>
         <p>
-            Corporate events like mergers, spinoffs, or rebrands, and challenges such as recalls or litigation can produce uncertainty around your brand’s representation on Wikipedia. Our team offers strategic assessments of your Wikipedia presence and the media landscape, providing actionable insights to navigate these complexities effectively.        </p>
+            {lang === 'et' ? 'Ettevõtteüritused, nagu ühinemised, eraldamised või ümberbrändimine, ning väljakutsed, nagu tagasikutsumised või kohtuvaidlused, võivad tekitada ebakindlust teie brändi esindatuse osas Vikipeedias. Meie meeskond pakub strateegilisi hinnanguid teie Vikipeedia kohaloleku ja meediamaastiku kohta, pakkudes praktilisi teadmisi nende keerukuste tõhusaks lahendamiseks.' :
+                'Corporate events like mergers, spinoffs, or rebrands, and challenges such as recalls or litigation can produce uncertainty around your brand\'s representation on Wikipedia. Our team offers strategic assessments of your Wikipedia presence and the media landscape, providing actionable insights to navigate these complexities effectively.'}</p>
     </div>
     <div class="grid grid-cols-4 gap-8 mt-8 items-center justify-items-center">
         <Image
