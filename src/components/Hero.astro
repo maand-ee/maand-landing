@@ -23,14 +23,14 @@ const { lang} = Astro.props;
     <div class="absolute inset-0 bg-gradient-to-r from-black/80 to-black/20" />
     <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 justify-between container items-center py-8">
         <div class="order-last lg:order-first flex flex-col justify-center">
-            <h2 class="text-4xl mt-4 lg:mt-0 sm:text-5xl font-bold mb-4 text-primary">
+            <h2 class="text-4xl mt-4 lg:mt-0 sm:text-5xl font-bold mb-4 text-primary text-center md:text-left">
                 {lang === 'et' ? 'Õigesti tehtud tarkvara' : 'Software done right'}
             </h2>
-            <p class="mb-8 text-primary">
+            <p class="mb-8 text-primary text-center md:text-left">
                 {lang === 'et' ? 'Loome teile parima lahenduse' : 'We build the best solution for you'}
             </p>
-            <div>
-                <a class="bg-black text-white p-3 px-6 rounded-lg" href="#contact">
+            <div class="flex justify-center md:justify-start">
+                <a class="bg-primary text-black p-3 px-6 rounded-lg" href="#contact">
                     {lang === 'et' ? 'Võta ühendust' : 'Get in touch'}
                 </a>
             </div>

@@ -22,7 +22,7 @@ const { lang } = Astro.props;
   class="container mt-36 flex flex-col sm:flex-row justify-between gap-8 scroll-mt-24"
 >
   <div class="flex-1">
-    <h3 class="mb-8 font-bold text-3xl">{lang === 'et' ? 'Mida oleme saavutanud' : 'What we have achieved'}</h3>
+    <h3 class="mb-8 font-bold text-3xl text-center md:text-left">{lang === 'et' ? 'Mida oleme saavutanud' : 'What we have achieved'}</h3>
     <div class="space-y-4 mb-12">
         <p>
             {lang === 'et' ? 'Maand Solutions aitab nii alustavatel kui ka juba tegutsevatel brändidel oma lugusid veebis jutustada täpse ja kaasahaarava Vikipeedia sisu ning tehisintellektil põhinevate digikampaaniate kaudu, mis avaldavad mõju.' :
@@ -102,21 +102,57 @@ const { lang } = Astro.props;
 </section>
 
 <section
-    id="team"
-    class="container mt-24 mb scroll-mt-24"
-    >
-    <h3 class="font-bold text-3xl">{lang === 'et' ? 'Meie meeskond' : 'Our team'}</h3>
-<div class="mt-12 flex justify-center items-start gap-6 flex-wrap text-black">
-    <div class="flex flex-col items-center mr-60">
-        <Image src={magnar} alt="member 1" class="w-48 h-48 rounded-full object-cover" />
-        <p class="mt-2 font-medium">Magnar Aruoja</p>
-        <p class="font-medium">Role</p>
+        id="team"
+        class="container mx-auto mt-16 scroll-mt-24 px-4"
+>
+    <h3 class="font-bold text-3xl text-center">
+        {lang === 'et' ? 'Meie meeskond' : 'Our team'}
+    </h3>
+    <div class="mt-12 flex flex-col md:flex-row justify-center items-center gap-10 md:gap-16 text-black">
+        <div class="flex flex-col items-center">
+            <Image src={magnar} alt="Magnar Aruoja" class="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover" />
+            <p class="mt-2 font-medium text-center">Magnar Aruoja</p>
+            <p class="font-medium text-center">{lang === 'et' ? 'Roll' : 'Role'}</p>
+            <p class="font-medium text-center">{lang === 'et' ? 'Tel: 55556666' : 'Phone: 55556666'}</p>
+            <p class="font-medium text-center">{lang === 'et' ? 'E-mail: magnar@maand.ee' : 'Email: magnar@maand.ee'}</p>
+        </div>
+        <div class="flex flex-col items-center">
+            <Image src={andres} alt="Andres Saaremõts" class="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover" />
+            <p class="mt-2 font-medium text-center">Andres Saaremõts</p>
+            <p class="font-medium text-center">{lang === 'et' ? 'Roll' : 'Role'}</p>
+            <p class="font-medium text-center">{lang === 'et' ? 'Tel: 55556666' : 'Phone: 55556666'}</p>
+            <p class="font-medium text-center">{lang === 'et' ? 'E-mail: andres@maand.ee' : 'Email: andres@maand.ee'}</p>
+        </div>
     </div>
-
-    <div class="flex flex-col items-center ml-60">
-        <Image src={andres} alt="member 2" class="w-48 h-48 rounded-full object-cover" />
-        <p class="mt-2 font-medium">Andres Saaremõts</p>
-        <p class="font-medium">Role</p>
-    </div>
-</div>
 </section>
+
+
+<!-- next commented out section for when more than 2 team members are added -->
+<!--
+<section
+        id="team"
+        class="container mx-auto mt-24 scroll-mt-24 px-4"
+>
+    <h3 class="font-bold text-3xl text-center">
+        {lang === 'et' ? 'Meie meeskond' : 'Our team'}
+    </h3>
+
+    <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 text-black">
+        <div class="flex flex-col items-center">
+            <Image src={magnar} alt="Magnar Aruoja" class="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover" />
+            <p class="mt-2 font-medium text-center">Magnar Aruoja</p>
+            <p class="font-medium text-center">Role</p>
+            <p class="font-medium text-center">tel: 55556666</p>
+            <p class="font-medium text-center">E-mail: magnar@maand.ee</p>
+        </div>
+
+        <div class="flex flex-col items-center">
+            <Image src={andres} alt="Andres Saaremõts" class="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover" />
+            <p class="mt-2 font-medium text-center">Andres Saaremõts</p>
+            <p class="font-medium text-center">Role</p>
+            <p class="font-medium text-center">Tel: 55556666</p>
+            <p class="font-medium text-center">E-mail: andres@maand.ee</p>
+        </div>
+    </div>
+</section>
+-->
