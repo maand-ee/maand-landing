@@ -11,28 +11,28 @@ const { lang } = Astro.props;
 ---
 
 <section id="services" class="container mt-28 scroll-mt-24">
-    <h3 class="font-bold text-3xl text-center md:text-left">{lang === 'et' ? 'Meie teenused' : 'Our services'}</h3>
-    <div class="grid sm:grid-cols-3 flex-wrap mt-4 gap-8 text-center sm:text-left">
+    <h3 class="font-bold text-3xl text-center md:text-center">{lang === 'et' ? 'Meie teenused' : 'Our services'}</h3>
+    <div class="grid sm:grid-cols-3 flex-wrap mt-8 gap-8 text-center sm:text-left">
         <div>
-            <div class="aspect-square h-44 rounded-xl flex justify-center items-center font-bold text-9xl mb-2 pb-2 mx-auto sm:mx-0">
+            <div class="aspect-square h-44 rounded-xl flex justify-center items-center font-bold text-9xl mb-2 pb-2 mx-auto">
                 <Image src={productStrategy} alt="product strategy" class="h-56 w-56" />
             </div>
-            <h4 class="font-bold mb-4 text-xl">{lang === 'et' ? 'Tootestrateegia' : 'Product strategy'}</h4>
-            <p>{lang === 'et' ? 'Läbimõeldud tootestrateegia loomine - äristrateegia ja innovatsioon.' : 'Creating a well-thought-out product strategy – business strategy and innovation.'}</p>
+            <h4 class="font-bold mb-4 text-xl text-center">{lang === 'et' ? 'Tootestrateegia' : 'Product strategy'}</h4>
+            <p class = "text-center">{lang === 'et' ? 'Läbimõeldud tootestrateegia loomine - äristrateegia ja innovatsioon.' : 'Creating a well-thought-out product strategy – business strategy and innovation.'}</p>
         </div>
         <div>
-            <div class="aspect-square h-44 rounded-xl flex justify-center items-center font-bold text-9xl mb-2 pb-2 mx-auto sm:mx-0">
+            <div class="aspect-square h-44 rounded-xl flex justify-center items-center font-bold text-9xl mb-2 pb-2 mx-auto ">
                 <Image src={softwareSolutions} alt="software solutions" class="h-56 w-56" />
             </div>
-            <h4 class="font-bold mb-4 text-xl">{lang === 'et' ? 'Tarkvaralahendused' : 'Software solutions'}</h4>
-            <p>{lang === 'et' ? 'Nutikad lahendused ja kiire arendustsükkel - viime teie visiooni ellu!' : 'Smart solutions and a fast development cycle – we bring your vision to life!'}</p>
+            <h4 class="font-bold mb-4 text-xl text-center">{lang === 'et' ? 'Tarkvaralahendused' : 'Software solutions'}</h4>
+            <p class =" text-center">{lang === 'et' ? 'Nutikad lahendused ja kiire arendustsükkel - viime teie visiooni ellu!' : 'Smart solutions and a fast development cycle – we bring your vision to life!'}</p>
         </div>
         <div>
-            <div class="aspect-square h-44 rounded-xl flex justify-center items-center font-bold text-9xl mb-2 pb-2 mx-auto sm:mx-0">
+            <div class="aspect-square h-44 rounded-xl flex justify-center items-center font-bold text-9xl mb-2 pb-2 mx-auto ">
                 <Image src={mobileApplication} alt="mobile application" class="h-56 w-56" />
             </div>
-            <h4 class="font-bold mb-4 text-xl">{lang === 'et' ? 'Mobiilsed rakendused' : 'Mobile applications'}</h4>
-            <p>{lang === 'et' ? 'Käeulatuses igal hetkel - ühendame tipptehnoloogia kasutajamugavusega!' : 'Within reach at any moment – we combine cutting-edge technology with user convenience!'}</p>
+            <h4 class="font-bold mb-4 text-xl text-center">{lang === 'et' ? 'Mobiilsed rakendused' : 'Mobile applications'}</h4>
+            <p class="text-center">{lang === 'et' ? 'Käeulatuses igal hetkel - ühendame tipptehnoloogia kasutajamugavusega!' : 'Within reach at any moment – we combine cutting-edge technology with user convenience!'}</p>
         </div>
     </div>
 </section>
