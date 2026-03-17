@@ -19,18 +19,18 @@ const { lang } = Astro.props;
 
 <section
   id="about"
-  class="container mt-36 flex flex-col sm:flex-row justify-between gap-8 scroll-mt-24"
+  class="container mt-28 flex flex-col sm:flex-row justify-between gap-8 scroll-mt-24"
 >
   <div class="flex-1">
     <h3 class="mb-8 font-bold text-3xl text-center md:text-left">{lang === 'et' ? 'Mida oleme saavutanud' : 'What we have achieved'}</h3>
     <div class="space-y-4 mb-12 text-justify">
         <p>
-            {lang === 'et' ? 'Maand Solutions pakub digistrateegiat ja tarkvaralahendusi klientidele, kes seda kõige rohkem vajavad — alates riigiasutustest, kes läbivad keerulisi digitaalseid muutusi, kuni ettevõteteni, kes soovivad liikuda kiiremini kui nende praegune olukord võimaldab.' :
-                'Maand Solutions delivers digital strategy and software solutions to the clients who need them most — from government institutions navigating complex digital transformations to companies looking to move faster than their current setup allows.'}
+            {lang === 'et' ? 'Maand Solutions pakub digistrateegiat ja tarkvaralahendusi klientidele, kes seda kõige rohkem vajavad. Alates riigiasutustest, kes läbivad keerulisi digitaalseid muutusi, kuni ettevõteteni, kes soovivad liikuda kiiremini kui nende praegune olukord võimaldab.' :
+                'Maand Solutions delivers digital strategy and software solutions to the clients who need them most, from government institutions navigating complex digital transformations to companies looking to move faster than their current setup allows.'}
         </p>
         <p>
-            {lang === 'et' ? 'Oleme väike meeskond ja see on meie tugevus, mitte nõrkus. Ei mingeid vahendajaid, ei mingeid ooteaegu, ei mingeid inimesi, kes su probleemi kolm nädalat hiljem sulle tagasi seletavad. Tood meile väljakutse — strateegilise, tehnilise või midagi vahepealset — ja me läheme tööle. Töö, mis tegelikult jõuab kohale.' :
-                'We\'re a small team, and that\'s a feature not a bug. No hand-offs, no waiting rooms, no one explaining your problem back to you three weeks later. You bring us a challenge — strategic, technical, or somewhere in between — and we get to work. The kind of work that actually ships.'}</p>
+            {lang === 'et' ? 'Oleme väike meeskond ja see on meie tugevus, mitte nõrkus. Ei mingeid vahendajaid, ei mingeid ooteaegu, ei mingeid inimesi, kes su probleemi kolm nädalat hiljem sulle tagasi seletavad. Tood meile väljakutse, strateegilise, tehnilise või midagi vahepealset, ja me läheme tööle. Töö, mis tegelikult jõuab kohale.' :
+                'We\'re a small team, and that\'s a feature not a bug. No hand-offs, no waiting rooms, no one explaining your problem back to you three weeks later. You bring us a challenge, strategic, technical, or somewhere in between, and we get to work. The kind of work that actually ships.'}</p>
         <p>
             {lang === 'et' ? 'Töötame erinevates valdkondades, alates avaliku sektori asutustest kuni erineva kasvuetapiga eraettevõteteni. Olenemata väljakutsest, on lähenemine alati sama: selge mõtlemine, puhas teostus ja tulemused, millele saab päriselt tugineda.' :
                 'We work across sectors, from public institutions to private companies at various stages of growth. Whatever the challenge, the approach stays the same: clear thinking, clean execution, and zero tolerance for solutions that look good in a deck but fall apart in practice.'}</p>
@@ -96,7 +96,7 @@ const { lang } = Astro.props;
 
 <section
         id="team"
-        class="container mx-auto mt-24 scroll-mt-24 px-4"
+        class="container mx-auto mt-28 scroll-mt-24 px-4"
 >
     <h3 class="font-bold text-3xl text-center">
         {lang === 'et' ? 'Meie meeskond' : 'Our team'}
