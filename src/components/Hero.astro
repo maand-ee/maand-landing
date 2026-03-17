@@ -1,12 +1,13 @@
 ---
 import { Image } from 'astro:assets';
 import office from '../assets/officePic.jpg';
-import java from '../assets/java.svg';
-import typescript from '../assets/typescript.svg';
-import react from '../assets/react.svg';
+import java from '../assets/java_notext.svg';
+import typescript from '../assets/typescript_colored.svg';
+import react from '../assets/react_colored.svg';
 import nextjs from '../assets/nextjs.svg';
-import vue from '../assets/vue.svg';
-import angular from '../assets/angular.svg';
+import vue from '../assets/vuejs_colored.svg';
+import angular from '../assets/angular_colored.svg';
+import javascript from '../assets/javascript.svg';
 interface Props {
     lang: 'et' | 'en';
 }
@@ -39,12 +40,13 @@ const { lang} = Astro.props;
 
 <section class="container flex flex-col items-center my-8 gap-6 text-center">
     <p>{lang === 'et' ? 'Me räägime sinu keelt:' : 'We speak your language:'}</p>
-    <div class="grid grid-cols-3 sm:grid-cols-6 gap-6 items-center justify-items-center">
+    <div class="grid grid-cols-3 sm:grid-cols-7 gap-6 items-center justify-items-center">
         <Image src={java} alt="Java" class="h-8 sm:h-10 w-auto" />
         <Image src={typescript} alt="Typescript" class="h-8 sm:h-10 w-auto" />
         <Image src={react} alt="React" class="h-8 sm:h-10 w-auto" />
         <Image src={nextjs} alt="NextJS" class="h-8 sm:h-10 w-auto" />
         <Image src={vue} alt="Vue" class="h-8 sm:h-10 w-auto" />
         <Image src={angular} alt="Angular" class="h-10 sm:h-12 w-auto" />
+        <Image src={javascript} alt="JavaScript" class="h-10 sm:h-12 w-auto col-start-2 sm:col-start-auto" />
     </div>
 </section>
