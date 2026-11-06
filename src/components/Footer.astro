@@ -14,22 +14,18 @@ const { lang } = Astro.props;
             <h1 class="mb-2 flex justify-center md:justify-start">
                 <Image src={logo} alt="maand" class="h-14 sm:h-20 w-auto" />
             </h1>
-            <iframe 
-                class="my-4 w-full"
-                height="400"
-                style="border:0"
-                loading="lazy"
-                allowfullscreen
-                referrerpolicy="no-referrer-when-downgrade"
-                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB0gu0nFTnwbQ93qvR5kf0qA7oGDyf3oCg
-                    &q=Turu+tn+2">
-            </iframe>
+            <div
+                id="map"
+                class="my-4 w-full h-[400px] rounded-xl bg-black"
+                data-address={lang === 'et' ? 'Turu tn 2, 51004 Tartu' : 'Turu 2, 51004 Tartu'}
+                data-link={lang === 'et' ? 'Ava kaardil' : 'View on map'}
+            ></div>
         </div>
         <div class="flex-1 bg-black rounded-b-2xl sm:rounded-r-2xl text-white p-5 py-10 sm:p-12 flex flex-col justify-center gap-6">
             <h3 class="text-3xl font-bold text-center md:text-left">{lang === 'et' ? 'Võta meiega ühendust' : 'Get in touch with us'}</h3>
             <a href="mailto:info@maand.ee" class="text-2xl font-semibold underline underline-offset-4 text-center md:text-left">info@maand.ee</a>
             <address class="not-italic flex flex-col gap-1 text-gray-300 text-center md:text-left">
-                <p>{lang === 'et' ? 'Turu tn 2, 51004 Tartu' : 'Turu St 2, 51004 Tartu'}</p>
+                <p>{lang === 'et' ? 'Turu tn 2, 51004 Tartu' : 'Turu 2, 51004 Tartu'}</p>
             </address>
             <div class="border-t border-gray-700 pt-6 text-gray-400 text-sm flex flex-col gap-1 text-center md:text-left">
                 <p>MAAND SOLUTIONS OÜ</p>
@@ -40,3 +36,83 @@ const { lang } = Astro.props;
     </div>
     <p class="text-center my-4">© 2026 Maand Solutions OÜ</p>
 </footer>
+
+<script>
+    import L from 'leaflet';
+    import 'leaflet/dist/leaflet.css';
+
+    const position: L.LatLngTuple = [58.3778255, 26.730487];
+    const map = L.map('map', { center: position, zoom: 16, scrollWheelZoom: false, zoomControl: false });
+    map.attributionControl.setPrefix(false)
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+        className: 'map-tiles',
+    }).addTo(map);
+
+    const pin = L.divIcon({
+        className: 'map-pin',
+        html: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 36" width="30" height="45"><path d="M12 0C5.4 0 0 5.4 0 12c0 9 12 24 12 24s12-15 12-24C24 5.4 18.6 0 12 0z" fill="#e11d2e" stroke="#fff" stroke-width="1.5"/><circle cx="12" cy="12" r="4.5" fill="#fff"/></svg>',
+        iconSize: [30, 45],
+        iconAnchor: [15, 45],
+    });
+
+    const mapElement = document.getElementById('map')!;
+
+    const InfoCard = L.Control.extend({
+        onAdd() {
+            const card = L.DomUtil.create('div', 'map-info-card');
+            const name = L.DomUtil.create('strong', '', card);
+            name.textContent = 'MAAND SOLUTIONS OÜ';
+            const address = L.DomUtil.create('p', '', card);
+            address.textContent = mapElement.dataset.address ?? '';
+            const link = L.DomUtil.create('a', '', card);
+            link.textContent = mapElement.dataset.link ?? '';
+            link.href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapElement.dataset.address ?? '')}`;
+            link.target = '_blank';
+            link.rel = 'noopener';
+            L.DomEvent.disableClickPropagation(card);
+            return card;
+        },
+    });
+
+    new InfoCard({ position: 'topleft' }).addTo(map);
+
+    L.marker(position, { icon: pin, keyboard: false }).addTo(map);
+
+    map.once('click', () => map.scrollWheelZoom.enable());
+</script>
+
+<style is:global>
+    .map-tiles {
+        filter: grayscale(100%) brightness(0.65) contrast(1.1);
+    }
+    #map .leaflet-control-attribution {
+        background: rgba(0, 0, 0, 0.6);
+        color: #aaa;
+    }
+    #map .leaflet-control-attribution a {
+        color: #ccc;
+    }
+    .map-pin {
+        background: none;
+        border: none;
+        filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.6));
+    }
+    #map .map-info-card {
+        background: #000;
+        color: #fff;
+        padding: 12px 16px;
+        border-radius: 8px;
+        line-height: 1.4;
+        max-width: 220px;
+    }
+    #map .map-info-card p {
+        margin: 0;
+    }
+    #map .map-info-card a {
+        color: #ffd400;
+        text-decoration: underline;
+    }
+</style>
