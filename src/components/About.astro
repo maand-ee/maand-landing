@@ -1,0 +1,55 @@
+---
+import { Image } from 'astro:assets';
+import iconColon from '../assets/icon-colon.svg';
+import iconBraces from '../assets/icon-braces-yellow.svg';
+interface Props {
+    lang: 'et' | 'en';
+}
+
+const { lang } = Astro.props;
+---
+
+<section
+  id="about"
+  class="container mt-28 flex flex-col sm:flex-row justify-between gap-8 scroll-mt-24"
+>
+  <div class="flex-1">
+    <h3 class="mb-8 font-bold text-3xl text-center md:text-left">{lang === 'et' ? 'Meist' : 'About us'}</h3>
+    <div class="space-y-4 text-justify">
+        <p>
+            {lang === 'et' ? 'Maand Solutions OÜ on Tartus asuv tarkvaraarenduse ettevõte, mis pakub digistrateegia ja\n' +
+              'tarkvaralahendusi nii avaliku kui ka erasektori ettevõtetele. Ettevõtte põhitegevus on veebi- ja\n' +
+              'mobiilirakenduste arendus. Lisaks aitab ettevõte klientidel luua tootestrateegiat.' :
+                'Maand Solutions OÜ is a software development company, based in Tartu, offering digital strategy and software solutions to both public and private sector organisations. Our core business is web and mobile application development. We also help clients shape their product strategy.'}
+        </p>
+        <p>
+            {lang === 'et' ? 'Muuhulgas on Maandi meeskond arendanud ning arendamas infosüsteeme avaliku sektori organisatsioonidele ning teeb koostööd paljude teiste Eesti tarkvaraarendusettevõtetega.' :
+                'Among other work, the Maand team has built and continues to build information systems for public sector organizations, while collaborating with many other software development companies in Estonia.'}</p>
+        <p>
+            {lang === 'et' ? 'Lisaks tavapärasele tarkvaraarendusele pakub ettevõte otsast lõpuni\n' +
+              'rätseplahendusi uute süsteemide juurutamiseks – alates süsteemi ja toote disainist kuni\n' +
+              'toodangukeskkonna integreerimiseni, pakkudes vajadusel ka igapäevast tehnilist tuge\n' +
+              'kliendile.' :
+                'Beyond conventional software development, we offer end-to-end tailored solutions for rolling out new systems - from system and product design all the way to deployment, with day-to-day technical support for the client when needed.'}</p>
+    </div>
+  </div>
+    <div class="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <li class="border border-black p-4 list-none rounded-2xl min-h-40">
+            <h2 class="text-3xl font-semibold">40+</h2>
+            <p>{lang === 'et' ? 'Edukat projekti' : 'Completed projects'}</p>
+        </li>
+
+        <li class="bg-black p-4 list-none rounded-2xl min-h-40 flex items-center justify-center">
+            <Image src={iconColon} alt="" class="h-32 w-32" />
+        </li>
+
+        <li class="relative bg-primary list-none rounded-2xl min-h-40 overflow-hidden">
+            <Image src={iconBraces} alt="" class="absolute inset-0 w-full h-full object-contain" />
+        </li>
+
+        <li class="bg-white border border-black p-4 list-none rounded-2xl min-h-40">
+            <h2 class="text-3xl font-semibold">30+</h2>
+            <p>{lang === 'et' ? 'Rahulolevat klienti' : 'Satisfied clients'}</p>
+        </li>
+    </div>
+</section>

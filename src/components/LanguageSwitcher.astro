@@ -1,0 +1,21 @@
+---
+interface Props {
+    lang: 'en' | 'et';
+}
+
+const { lang } = Astro.props;
+
+const switchUrl = lang === 'et' ? '/en/' : '/';
+const label = lang === 'et' ? 'English' : 'Eesti';
+
+const base = import.meta.env.BASE_URL;
+
+const etUrl = `${base}`;
+const enUrl = `${base}en/`;
+---
+
+<div class="flex gap-2 ml-4">
+    <a href={etUrl} class={lang === 'et' ? 'font-bold' : ''}>ET</a>
+    <span>|</span>
+    <a href={enUrl} class={lang === 'en' ? 'font-bold' : ''}>EN</a>
+</div>
